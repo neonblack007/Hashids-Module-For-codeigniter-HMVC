@@ -88,6 +88,7 @@ class Site extends Controller
 	}
 }
 
+Note :- Controller is name of Base controller    
 
 Thanks to :- Ivan Akimov
    
