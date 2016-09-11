@@ -25,9 +25,12 @@ Third party folder contain all dependancies which required for hashids
 Hashides Controller : 
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 require_once APPPATH."/third_party/hashids/vendor/autoload.php"; 
+
 class Hashids extends Controller 
 {
+
 	private $hashids='';
 	function __construct()
 	{
