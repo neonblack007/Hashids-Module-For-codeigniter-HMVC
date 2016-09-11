@@ -5,6 +5,52 @@ Hashids is a small open-source library that generates short, unique, non-sequent
 It converts numbers like 347 into strings like “yr8”, or array of numbers like [27, 986] into “3kTMd”.
 You can also decode those ids back.
 
+modules
+      |_Hashids
+     	  |_config
+     	      |_encrypt.php // $config['salt']='setEncryptionDecryptionString';
+     	  |
+          |_controller
+              |_Hashids.php
+third_party
+	|_lib
+	|_Vendore
+	|_composer.json
+	
+
+Hashides Controller : 
+
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+require_once APPPATH."/third_party/hashids/vendor/autoload.php"; 
+class Hashids extends Controller 
+{
+	private $hashids='';
+	function __construct()
+	{
+	    parent::__construct();
+   	    $this->config->load('hashids/encrypt', TRUE);
+      	    $config_encrypt=$this->config->item('encrypt');
+      	    $this->hashids = new Hashids\Hashids($config_encrypt['salt']);
+	}
+ 	public function encrypt($plainText)
+ 	{
+	 	return $this->hashids->encode($plainText);
+ 	}
+ 	public function decrypt($cipherText,$single_flag=TRUE)
+ 	{
+ 		if($single_flag == TRUE)
+ 		{
+ 			$single_decrypt = $this->hashids->decode($cipherText);
+ 			return $single_decrypt[0];
+ 		}
+ 		else
+ 		{
+ 			return $this->hashids->decode($cipherText);;
+ 		}
+ 	}
+
+}
+        
 Example :-
 
 class Site extends Controller
