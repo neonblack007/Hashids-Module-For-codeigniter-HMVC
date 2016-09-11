@@ -23,7 +23,7 @@ third_party
 
 Third party folder contain all dependancies which required for hashids
 
-Hashides Controller : 
+Hashids Controller : 
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
