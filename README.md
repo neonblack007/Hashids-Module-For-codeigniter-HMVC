@@ -6,6 +6,7 @@ It converts numbers like 347 into strings like “yr8”, or array of numbers li
 You can also decode those ids back.
 
 modules
+
       |_Hashids
      	  |_config
      	      |_encrypt.php // $config['salt']='setEncryptionDecryptionString';
@@ -13,10 +14,13 @@ modules
           |_controller
               |_Hashids.php
 third_party
+
 	|_lib
 	|_Vendore
 	|_composer.json
 	
+
+Third party folder contain all dependancies which required for hashids
 
 Hashides Controller : 
 
@@ -79,3 +83,9 @@ class Site extends Controller
 		$this->load->view('logged_in_area',$data);
 	}
 }
+
+
+Thanks to :- Ivan Akimov
+   
+
+
