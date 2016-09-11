@@ -7,7 +7,7 @@ You can also decode those ids back.
 
 Example :-
 
-class Site extends Controller 
+class Site extends Controller
 {
 
 	function __construct()
