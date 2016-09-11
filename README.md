@@ -21,9 +21,11 @@ class Site extends Controller
 		modules::run('login/is_logged_in');
 		$user_id=2;
 		$data['id']=$user_id; // Normal Id 
-		$encrypt_id = $this->hashids->encrypt($user_id); // encrypt() function from hashid module will convert normal id into encrypted Id
+		$encrypt_id = $this->hashids->encrypt($user_id); 
+		// encrypt() function from hashid module will convert normal id into encrypted Id
 		$data['encrypt_id']=$encrypt_id; // encrypted Id
-		$decrypt_id = $this->hashids->decrypt($encrypt_id); // decrypt() function will convert encrypted id back to normal id 
+		$decrypt_id = $this->hashids->decrypt($encrypt_id); 
+		// decrypt() function will convert encrypted id back to normal id 
 		$data['decrypt_id']=$decrypt_id; // Normal Id
 		$this->load->view('logged_in_area',$data);
 	}
