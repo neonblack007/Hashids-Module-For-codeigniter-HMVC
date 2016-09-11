@@ -15,9 +15,10 @@ modules
               |_Hashids.php
 third_party
 
-	|_lib
-	|_Vendore
-	|_composer.json
+	|_hashids
+	    |_lib
+	    |_Vendore
+	    |_composer.json
 	
 
 Third party folder contain all dependancies which required for hashids
