@@ -24,7 +24,7 @@ third_party
 Third party folder contain all dependancies which required for hashids
 
 Hashids Controller : 
-
+```
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 require_once APPPATH."/third_party/hashids/vendor/autoload.php"; 
@@ -33,12 +33,13 @@ class Hashids extends Controller
 {
 
 	private $hashids='';
-	function __construct()
-	{
+	function __construct(){
+	
 	    parent::__construct();
    	    $this->config->load('hashids/encrypt', TRUE);
       	    $config_encrypt=$this->config->item('encrypt');
       	    $this->hashids = new Hashids\Hashids($config_encrypt['salt']);
+	    
 	}
  	public function encrypt($plainText)
  	{
@@ -58,9 +59,10 @@ class Hashids extends Controller
  	}
 
 }
+```
         
 Example :-
-
+```
 class Site extends Controller
 {
 
@@ -87,7 +89,7 @@ class Site extends Controller
 		$this->load->view('logged_in_area',$data);
 	}
 }
-
+```
 Note :- Controller is name of Base controller    
 
 Thanks to :- Ivan Akimov
